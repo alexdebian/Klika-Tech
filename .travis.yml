@@ -5,14 +5,19 @@ language: python
 python:
   - '3.5'
 
-before install:
+#before install:
+#  - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
+#  - tar xf geckodriver-v0.11.1-linux64.tar.gz
+#  - sudo cp $TRAVIS_BUILD_DIR/geckodriver /usr/bin/geckodriver
+#  - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
+#  - export PATH=/usr/bin:$PATH
+
+install:
   - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
   - tar xf geckodriver-v0.11.1-linux64.tar.gz
   - sudo cp $TRAVIS_BUILD_DIR/geckodriver /usr/bin/geckodriver
   - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
   - export PATH=/usr/bin:$PATH
-
-install:
   - pip install selenium
 
 script: python -m unittest -v testcalc
