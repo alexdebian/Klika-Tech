@@ -3,5 +3,5 @@ rvm:
 - 3.5.2
 
 before install:
-  sudo apt-get install python3.5
-  pip install selenium
+  - sudo apt-get install python3.5
+  - pip install selenium
