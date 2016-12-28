@@ -18,6 +18,6 @@ install:
   - sudo cp $TRAVIS_BUILD_DIR/geckodriver /usr/bin/geckodriver
   - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
   - export PATH=/usr/bin:$PATH
-  - sudo pip3 install selenium
+  - sudo pip install selenium
 
 script: python3 -m unittest -v testcalc
