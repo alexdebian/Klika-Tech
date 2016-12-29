@@ -16,10 +16,10 @@ class TestCalculator(unittest.TestCase):
 
     def test_summing_int_numbers(self):
         driver = self.driver
-        driver.get("http://test.job.klika-tech.com.s3-website.eu-central-1.amazonaws.com/")
         # self.capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
         hub_url = "%s:%s@localhost:4445" % (self.username, self.access_key)
-        self.driver = webdriver.Remote(desired_capabilities=webdriver.DesiredCapabilities.FIREFOX, command_executor="http://%s/wd/hub" % hub_url)
+        driver = webdriver.Remote(desired_capabilities=webdriver.DesiredCapabilities.FIREFOX, command_executor="http://%s/wd/hub" % hub_url)
+        driver.get("http://test.job.klika-tech.com.s3-website.eu-central-1.amazonaws.com/")
 
         inputdiv = driver.find_element_by_xpath("//div[@class='input']")
         plus = driver.find_element_by_xpath("//div[@class='operators']/div[1]")

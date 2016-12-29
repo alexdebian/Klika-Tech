@@ -10,7 +10,7 @@ python:
 
 install:
 #  - travis_wait 20 mvn install
-  - sudo apt-get install xvfb
+#  - sudo apt-get install xvfb
   - pip install --upgrade pip
   - ls
   - pip install -r requirements.txt
