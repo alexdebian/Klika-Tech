@@ -1,4 +1,3 @@
-import os
 import unittest
 from selenium import webdriver
 from decimal import Decimal
@@ -7,12 +6,7 @@ from decimal import Decimal
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
-        self.username = os.environ["SAUCE_USERNAME"]
-        self.access_key = os.environ["SAUCE_ACCESS_KEY"]
-        capabilities = {'browserName': "firefox", 'platform': "Linux", 'version': "45.0",
-                        "tunnel-identifier": os.environ["TRAVIS_JOB_NUMBER"]}
-        hub_url = "%s:%s@localhost:4445" % (self.username, self.access_key)
-        self.driver = webdriver.Remote(desired_capabilities=capabilities, command_executor="http://%s/wd/hub" % hub_url)
+        self.driver = webdriver.Firefox()
 
     def test_summing_int_numbers(self):
         driver = self.driver
