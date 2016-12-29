@@ -1,12 +1,15 @@
 import unittest
 from selenium import webdriver
 from decimal import Decimal
+from pyvirtualdisplay import Display
 
 
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Firefox()
+        self.display = Display(visible=0, size=(1024, 768))
+        self.display.start()
 
     def test_summing_int_numbers(self):
         driver = self.driver
@@ -520,6 +523,7 @@ class TestCalculator(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
+        self.display.stop()
 
 if __name__ == "__main__":
     unittest.main()
