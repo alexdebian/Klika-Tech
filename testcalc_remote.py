@@ -13,9 +13,9 @@ class TestCalculator(unittest.TestCase):
         # display.start()
         self.username = os.environ["SAUCE_USERNAME"]
         self.access_key = os.environ["SAUCE_ACCESS_KEY"]
-        self.capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
+        # self.capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
         hub_url = "%s:%s@localhost:4445" % (self.username, self.access_key)
-        self.driver = webdriver.Remote(desired_capabilities=self.capabilities, command_executor="http://%s/wd/hub" % hub_url)
+        self.driver = webdriver.Remote(command_executor="http://%s/wd/hub" % hub_url)
 
     def test_summing_int_numbers(self):
         driver = self.driver
