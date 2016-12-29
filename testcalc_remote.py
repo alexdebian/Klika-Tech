@@ -8,14 +8,14 @@ from decimal import Decimal
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Firefox()
+        # self.driver = webdriver.Firefox()
         # display = Display(visible=0, size=(800, 600))
         # display.start()
         self.username = os.environ["SAUCE_USERNAME"]
         self.access_key = os.environ["SAUCE_ACCESS_KEY"]
 
     def test_summing_int_numbers(self):
-        driver = self.driver
+        # driver = self.driver
         # self.capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
         hub_url = "%s:%s@localhost:4445" % (self.username, self.access_key)
         driver = webdriver.Remote(desired_capabilities=webdriver.DesiredCapabilities.FIREFOX, command_executor="http://%s/wd/hub" % hub_url)

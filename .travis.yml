@@ -20,4 +20,9 @@ install:
 #  - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
   - export PATH=$PATH:/usr/bin
 
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+
 script: python3 -m unittest -v testcalc_remote.TestCalculator.test_summing_int_numbers
