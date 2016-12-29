@@ -7,8 +7,8 @@ from decimal import Decimal
 
 class TestCalculator(unittest.TestCase):
 
-    def __init__(self, methodName='runTest'):
-        super().__init__(methodName='runTest')
+    def __init__(self):
+        super().__init__()
         self.capabilities = None
 
     def setUp(self):
