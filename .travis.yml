@@ -1,5 +1,4 @@
 addons:
-#  firefox: "50.1.0"
   sauce_connect:
     username: "alexdebian"
     access_key: "c52d2334-38f0-4ada-bc5a-bf6691258853"
@@ -9,16 +8,14 @@ python:
   - '3.5'
 
 install:
-#  - travis_wait 20 mvn install
-#  - sudo apt-get install xvfb
-  - pip install --upgrade pip
-  - ls
-  - pip install -r requirements.txt
-  - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
-  - tar xf geckodriver-v0.11.1-linux64.tar.gz
-  - sudo cp $TRAVIS_BUILD_DIR/geckodriver /usr/bin/geckodriver
+#  - pip install --upgrade pip
+#  - ls
+#  - pip install -r requirements.txt
+#  - wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz
+#  - tar xf geckodriver-v0.11.1-linux64.tar.gz
+#  - sudo cp $TRAVIS_BUILD_DIR/geckodriver /usr/bin/geckodriver
 #  - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
-  - export PATH=$PATH:/usr/bin
+#  - export PATH=$PATH:/usr/bin
 
 before_script:
   - "export DISPLAY=:99.0"
