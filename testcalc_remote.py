@@ -7,7 +7,7 @@ from decimal import Decimal
 
 class TestCalculator(unittest.TestCase):
 
-    def setUp(self, capabilities):
+    def setUp(self):
         # self.driver = webdriver.Firefox()
         # display = Display(visible=0, size=(800, 600))
         # display.start()
