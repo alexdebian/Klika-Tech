@@ -16,4 +16,4 @@ install:
   - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
   - export PATH=/usr/bin:$PATH
 
-script: python3 -m unittest -v testcalc
+script: python3 -m unittest -v testcalc.TestCalculator.test_summing_int_numbers
