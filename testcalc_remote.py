@@ -2,15 +2,11 @@ import os
 import unittest
 from selenium import webdriver
 from decimal import Decimal
-# from pyvirtualdisplay import Display, display
 
 
 class TestCalculator(unittest.TestCase):
 
     def setUp(self):
-        # self.driver = webdriver.Firefox()
-        # display = Display(visible=0, size=(800, 600))
-        # display.start()
         self.username = os.environ["SAUCE_USERNAME"]
         self.access_key = os.environ["SAUCE_ACCESS_KEY"]
         capabilities = {'browserName': "firefox", 'platform': "Linux", 'version': "45.0",
