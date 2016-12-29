@@ -1,5 +1,8 @@
 addons:
   firefox: "50.1.0"
+  sauce_connect:
+    username: "alexdebian"
+    access_key: "c52d2334-38f0-4ada-bc5a-bf6691258853"
 
 language: python
 python:
@@ -17,4 +20,4 @@ install:
 #  - sudo mv $TRAVIS_BUILD_DIR/geckodriver /usr/bin/wires
   - export PATH=$PATH:/usr/bin
 
-script: python3 -m unittest -v testcalc.TestCalculator.test_summing_int_numbers
+script: python3 -m unittest -v testcalc_remote.TestCalculator.test_summing_int_numbers

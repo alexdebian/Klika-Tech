@@ -1,15 +1,25 @@
+import os
 import unittest
 from selenium import webdriver
 from decimal import Decimal
-from pyvirtualdisplay import Display
+# from pyvirtualdisplay import Display, display
 
 
 class TestCalculator(unittest.TestCase):
 
+    def __init__(self, methodName='runTest'):
+        super().__init__(methodName='runTest')
+        self.capabilities = None
+
     def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.display = Display(visible=0, size=(1024, 768))
-        self.display.start()
+        # self.driver = webdriver.Firefox()
+        # display = Display(visible=0, size=(800, 600))
+        # display.start()
+        self.username = os.environ["SAUCE_USERNAME"]
+        self.access_key = os.environ["SAUCE_ACCESS_KEY"]
+        self.capabilities["tunnel-identifier"] = os.environ["TRAVIS_JOB_NUMBER"]
+        hub_url = "%s:%s@localhost:4445" % (self.username, self.access_key)
+        self.driver = webdriver.Remote(desired_capabilities=self.capabilities, command_executor="http://%s/wd/hub" % hub_url)
 
     def test_summing_int_numbers(self):
         driver = self.driver
@@ -523,7 +533,7 @@ class TestCalculator(unittest.TestCase):
 
     def tearDown(self):
         self.driver.quit()
-        self.display.stop()
+        # display.stop()
 
 if __name__ == "__main__":
     unittest.main()
